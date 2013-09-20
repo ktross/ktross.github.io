@@ -1,0 +1,57 @@
+html, body {height:100%;}
+#avatar {
+	background:#d85576;
+	width:120px;
+	height:120px;
+	border-radius:20px;
+	margin:auto;
+	vertical-align:middle;
+	margin-bottom:10px;
+}
+#avatar img {
+	width:100px;
+	height:100px;
+	border-radius:50px;
+	vertical-align:middle;
+	margin-top:10px;
+}
+
+#left {
+	padding-top:50px;
+	padding-bottom:50px;
+	color:#ccc;
+}
+#left a.title, #left a.title:visited {
+	color:#fff;
+	font-size:24px;
+}
+#nav {
+	margin-top:10px;
+}
+.post .more {text-align:right;}
+#right {
+	padding-top:30px;
+}
+h1,h2,h3,h4,h5,h6 {color:#666;}
+.item .languages, .item .summary, .item .gallery, .item .links {
+	margin:20px 0px;
+}
+.item .languages {
+	line-height:24px;
+}
+.item .languages .label:hover {
+	cursor:pointer;
+	opacity:0.7;
+}
+#sidebar {position:fixed;top:50px;left:15px;}
+
+#right {
+	color:#666;
+}
+#contact {
+	margin-top:10px;
+}
+#commits li {
+	line-height:2em;
+	font-size:12px;
+}
