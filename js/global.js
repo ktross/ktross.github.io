@@ -1,8 +1,36 @@
 $(function() {
-	
+
+	// Lightbox clickthrough
+	$(".gallery").each(function() {
+		$(this).append('<div class="magnify"><span class="glyphicon glyphicon-search"></span></div>');
+	});
+
+	$(".magnify").click(function(e) {
+		$(this).hide();
+		var coords = document.elementFromPoint(e.clientX, e.clientY);
+		$(coords).click();
+		$(this).show();
+	});
+
+	// Responsive video (16:9 aspect ratio)
+	resizeVideo();
+
+	$(window).resize(function() {
+		resizeVideo();
+	});
+
+	function resizeVideo() {
+		$(".videos iframe").each(function() {
+			var iframe_width = $(this).width()
+			var iframe_height = Math.round((iframe_width/16)*9);
+			$(this).height(iframe_height+'px');
+		});
+	}
+
 	// Tooltips
 	$("[data-toggle='tooltip']").tooltip({trigger:"hover"});
 
+	// Equalize columns
 	leftColumn = $("#left");
 	middleColumn = $("#middle");
 	rightColumn = $("#right");
@@ -19,7 +47,7 @@ $(function() {
 
 	function equalizeColumns(left, middle, right) {
 		if ($(window).width() > 970) {
-			maxHeight = $(".container").height();
+			maxHeight = middleColumn.height();
 			left.height(maxHeight);
 			middle.height(maxHeight);
 			right.height(maxHeight);
